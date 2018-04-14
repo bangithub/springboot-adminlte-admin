@@ -13,6 +13,8 @@ import com.lidong.entity.vo.TreeMenu;
 import com.lidong.service.ISysMenuService;
 import com.lidong.service.ISysSettingService;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -22,6 +24,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
  * @author jameszhou
  *
  */
+//@Component
 public class GlobalInterceptor extends HandlerInterceptorAdapter {
 
 	@Override

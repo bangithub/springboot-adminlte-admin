@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Param;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.baomidou.mybatisplus.plugins.Page;
+import org.springframework.stereotype.Repository;
 
 
 /**
@@ -16,7 +17,7 @@ import com.baomidou.mybatisplus.plugins.Page;
  * SysUser 表数据库控制层接口
  *
  */
-@Mapper
+@Repository
 public interface SysUserMapper extends BaseMapper<SysUser> {
 
 	List<Map<Object, Object>> selectUserList(Page<Map<Object, Object>> page, @Param("search") String search);

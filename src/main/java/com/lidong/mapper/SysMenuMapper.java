@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.lidong.entity.SysMenu;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
+import org.springframework.stereotype.Repository;
 
 
 /**
@@ -14,7 +14,7 @@ import org.apache.ibatis.annotations.Param;
  * SysMenu 表数据库控制层接口
  *
  */
-@Mapper
+@Repository
 public interface SysMenuMapper extends BaseMapper<SysMenu> {
 
 	List<String> selectMenuIdsByuserId(String uid);

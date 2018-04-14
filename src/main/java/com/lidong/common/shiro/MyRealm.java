@@ -21,6 +21,7 @@ import java.util.Set;
  * @author jameszhou
  *
  */
+
 public class MyRealm extends AuthorizingRealm{
 	
 	/**
@@ -44,8 +45,6 @@ public class MyRealm extends AuthorizingRealm{
 	 */
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-		// TODO Auto-generated method stub
-		
 		UsernamePasswordToken user = (UsernamePasswordToken) token;
 		SysUser sysUser = userService.selectOne(new EntityWrapper<SysUser>().eq("userName", user.getUsername()));
 		
@@ -69,8 +68,6 @@ public class MyRealm extends AuthorizingRealm{
 	 */
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-		// TODO Auto-generated method stub
-		
 		SysUser sysUser = (SysUser) principals.getPrimaryPrincipal();
 		SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
 		Set<String> roles = sysUserRoleService.findRolesByUid(sysUser.getId());
