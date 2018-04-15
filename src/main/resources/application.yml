@@ -25,6 +25,10 @@ spring:
     freemarker:
        prefix: .html
        content-type: text/html 
+       expose-spring-macro-helpers: false
+       expose-session-attributes: false
+       expose-request-attributes: false
+       templateLoaderPath : classpath:/templates/
        settings:
           classic_compatible: true
           template_update_delay: 0
