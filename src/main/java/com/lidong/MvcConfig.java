@@ -18,6 +18,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter{
         registry.addResourceHandler("/plugins/**").addResourceLocations("classpath:/static/plugins/");
         registry.addResourceHandler("/app/**").addResourceLocations("classpath:/static/app/");
         registry.addResourceHandler("/mapper/**").addResourceLocations("classpath:/mapper/");
+        registry.addResourceHandler("/upload/**").addResourceLocations("classpath:/upload/");
     }
 
     @Override

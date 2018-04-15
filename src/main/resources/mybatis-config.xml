@@ -25,14 +25,4 @@
 		<setting name="defaultStatementTimeout" value="25000" />
 	</settings>
 	
-	<!-- 查询对象别名配置 -->
-	<typeAliases>
-		<!-- 
-		<typeAlias alias="taskVo" type="xxx.vo.TaskVo" />
-		 -->
-	</typeAliases>
-
-	<mappers>
-		<mapper resource="mappers/*/*.xml"/>
-	</mappers>
 </configuration>

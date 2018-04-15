@@ -12,10 +12,10 @@ import java.util.Properties;
 @Configurable
 public class FreemarkerConfig {
 
-    @Bean("shiroFreemarkerConfig")
+    @Bean("freemarkerConfig")
     public ShiroTagFreeMarkerConfigurer shiroTagFreeMarkerConfigurer(){
         ShiroTagFreeMarkerConfigurer configurer =new ShiroTagFreeMarkerConfigurer();
-        configurer.setTemplateLoaderPath("/templates/");
+        configurer.setTemplateLoaderPath("classpath:/templates/");
         configurer.setDefaultEncoding("UTF-8");
         Properties pp = new Properties();
         pp.setProperty("template_update_delay","0");
