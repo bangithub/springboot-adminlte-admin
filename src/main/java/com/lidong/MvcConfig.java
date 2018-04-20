@@ -19,11 +19,20 @@ public class MvcConfig extends WebMvcConfigurerAdapter{
         registry.addResourceHandler("/app/**").addResourceLocations("classpath:/static/app/");
         registry.addResourceHandler("/mapper/**").addResourceLocations("classpath:/mapper/");
         registry.addResourceHandler("/upload/**").addResourceLocations("classpath:/upload/");
+        registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
+        registry.addResourceHandler("swagger-ui.html").addResourceLocations(
+				"classpath:/META-INF/resources/");
+		registry.addResourceHandler("/webjars/**").addResourceLocations(
+				"classpath:/META-INF/resources/webjars/");
     }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new GlobalInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(new GlobalInterceptor())
+        .excludePathPatterns("/swagger-ui.html")
+        .excludePathPatterns("/favicon.ico")
+        .excludePathPatterns("/upload/**")
+        .addPathPatterns("/**");
     }
 
     @Bean
